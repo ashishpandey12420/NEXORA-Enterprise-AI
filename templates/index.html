@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA AI - Intelligent Workspace</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <span>NEXORA<span class="logo-ai"> AI</span></span>
+            </div>
+
+            <button class="new-chat">＋ New Chat</button>
+
+            <div class="sidebar-menu">
+
+                <p class="menu-heading">WORKSPACE</p>
+
+                <a href="/" class="menu-item active">◈ Dashboard</a>
+                <a href="#" class="menu-item">⌕ Research</a>
+                <a href="#" class="menu-item">⌘ Coding Workspace</a>
+                <a href="/upload" class="menu-item">▤ File Library</a>
+                <a href="/browse" class="menu-item">▧ Browse Files</a>
+
+                <p class="menu-heading">RECENT CHATS</p>
+
+                <div class="chat-history">
+                    <a href="#" class="history-item">◦ AI Development</a>
+                    <a href="#" class="history-item">◦ Python Programming</a>
+                    <a href="#" class="history-item">◦ Data Analysis</a>
+                </div>
+
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item">⚙ Settings</a>
+                <a href="/login" class="menu-item">♙ Account</a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div>
+                    <span class="breadcrumb">Workspace / </span>
+                    <span class="current-page">New Conversation</span>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="model-status">
+                        <span class="status-dot"></span>
+                        Ollama Connected
+                    </div>
+
+                    <div class="model-name">
+                        Qwen 2.5 Coder 7B
+                    </div>
+
+                    <div class="profile">N</div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CHAT AREA -->
+            <section class="chat-section">
+
+                <!-- WELCOME SECTION -->
+                <div class="welcome-section">
+
+                    <div class="welcome-icon">✦</div>
+
+                    <p class="welcome-label">
+                        YOUR INTELLIGENT AI WORKSPACE
+                    </p>
+
+                    <h1>
+                        Welcome to <span>NEXORA AI</span>
+                    </h1>
+
+                    <p class="welcome-description">
+                        Your personal AI workspace for research,
+                        coding, learning and intelligent problem solving.
+                    </p>
+
+
+                    <!-- SUGGESTIONS -->
+                    <div class="suggestion-grid">
+
+                        <button class="suggestion-card">
+
+                            <span class="card-icon">⌘</span>
+
+                            <strong>Write Code</strong>
+
+                            <small>
+                                Build applications and solve coding problems.
+                            </small>
+
+                        </button>
+
+
+                        <button class="suggestion-card">
+
+                            <span class="card-icon">⌕</span>
+
+                            <strong>Research</strong>
+
+                            <small>
+                                Explore topics and discover useful information.
+                            </small>
+
+                        </button>
+
+
+                        <button class="suggestion-card">
+
+                            <span class="card-icon">▤</span>
+
+                            <strong>Analyze Files</strong>
+
+                            <small>
+                                Upload and understand your documents.
+                            </small>
+
+                        </button>
+
+
+                        <button class="suggestion-card">
+
+                            <span class="card-icon">✧</span>
+
+                            <strong>Learn Something</strong>
+
+                            <small>
+                                Understand complex concepts easily.
+                            </small>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE INPUT -->
+                <div class="input-container">
+
+                    <textarea id="chat-input" placeholder="Ask NEXORA anything..." rows="2">
+                    </textarea>
+
+
+                    <!-- INPUT TOOLBAR -->
+                    <div class="input-toolbar">
+
+                        <div class="input-tools">
+
+                            <!-- ATTACH FILE -->
+                            <button type="button" title="Attach File" id="attach-button">
+
+                                ＋ Attach
+
+                            </button>
+
+
+                            <!-- INTERNET SEARCH TOGGLE -->
+                            <button type="button" id="research-toggle" class="research-toggle"
+                                title="Search the Internet" aria-pressed="false">
+
+                                🌐 Search
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- SEND BUTTON -->
+                        <button class="send-button" id="send-btn" type="button">
+
+                            ↑
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DISCLAIMER -->
+                <p class="disclaimer">
+                    NEXORA AI can make mistakes. Verify important information.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- AGENT ACTIVITY PANEL -->
+        <aside class="agent-panel">
+
+            <div class="panel-header">
+
+                <h3>Agent Activity</h3>
+
+                <span class="live-badge">● LIVE</span>
+
+            </div>
+
+
+            <p class="panel-description">
+                Your multi-agent system
+            </p>
+
+
+            <!-- ROOT AGENT -->
+            <div class="agent-card">
+
+                <div class="agent-icon root">N</div>
+
+                <div class="agent-info">
+
+                    <strong>Root Agent</strong>
+
+                    <small>Main Coordinator</small>
+
+                </div>
+
+                <span class="agent-indicator"></span>
+
+            </div>
+
+
+            <!-- CODING AGENT -->
+            <div class="agent-card">
+
+                <div class="agent-icon coding">⌘</div>
+
+                <div class="agent-info">
+
+                    <strong>Coding Agent</strong>
+
+                    <small>Code Development</small>
+
+                </div>
+
+                <span class="agent-indicator idle"></span>
+
+            </div>
+
+
+            <!-- DEBUGGING AGENT -->
+            <div class="agent-card">
+
+                <div class="agent-icon debugging">⌕</div>
+
+                <div class="agent-info">
+
+                    <strong>Debugging Agent</strong>
+
+                    <small>Error Detection</small>
+
+                </div>
+
+                <span class="agent-indicator idle"></span>
+
+            </div>
+
+
+            <!-- TESTING AGENT -->
+            <div class="agent-card">
+
+                <div class="agent-icon testing">✓</div>
+
+                <div class="agent-info">
+
+                    <strong>Testing Agent</strong>
+
+                    <small>Quality Assurance</small>
+
+                </div>
+
+                <span class="agent-indicator idle"></span>
+
+            </div>
+
+
+            <!-- SYSTEM AGENT -->
+            <div class="agent-card">
+
+                <div class="agent-icon system">⚙</div>
+
+                <div class="agent-info">
+
+                    <strong>System Agent</strong>
+
+                    <small>System Operations</small>
+
+                </div>
+
+                <span class="agent-indicator idle"></span>
+
+            </div>
+
+
+            <!-- LOCAL AI ENGINE -->
+            <div class="system-info">
+
+                <h4>LOCAL AI ENGINE</h4>
+
+                <div class="info-row">
+
+                    <span>Runtime</span>
+
+                    <strong>Ollama</strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>Model</span>
+
+                    <strong>Qwen 2.5 7B</strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>Connection</span>
+
+                    <strong class="connected">Localhost</strong>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

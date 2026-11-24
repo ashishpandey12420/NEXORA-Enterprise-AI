@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Study Materials - Education Access Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Education Access Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Upload Study Materials</h2>
+            <form id="uploadForm">
+                <label for="fileTitle">Title:</label>
+                <input type="text" id="fileTitle" name="fileTitle" required>
+                <br>
+                <label for="fileDescription">Description:</label>
+                <textarea id="fileDescription" name="fileDescription" rows="4" required></textarea>
+                <br>
+                <label for="studyFile">File:</label>
+                <input type="file" id="studyFile" name="studyFile" required>
+                <br>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Education Access Portal</p>
+    </footer>
+</body>
+</html>

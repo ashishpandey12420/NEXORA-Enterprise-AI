@@ -1,0 +1,29 @@
+
+# Environment variables
+.env
+
+# ADK
+.adk/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Build files
+build/
+dist/
+installer_output/
+
+# IDE
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
